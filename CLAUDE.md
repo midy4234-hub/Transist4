@@ -1,6 +1,6 @@
 # Transist4 — Claude Code 向けの仕様書
 
-4 バンドのトランジェントシェイパー (VST3、JUCE 8.0.15)。LHI Audio ST4b の再現が出発点 (旧仮名 TranQuad)。
+4 バンドのトランジェントシェイパー (VST3、JUCE 8.0.15)。旧仮名 TranQuad。
 作者は MIDy (音楽プロデューサー)。Claude Code が作り、MIDy が Ableton Live で確認している (2026-09-26 実機で「とても良い」)。
 このファイルは、別のマシン (Windows を含む) の Claude Code が作業を引き継げるように、仕様・決定事項・ビルド方法をまとめたもの。
 
@@ -9,7 +9,7 @@
 - 音を聴いて良し悪しを判断するのはユーザー。Claude は数値で壊れていないこと (足し戻し誤差・レイテンシ・レベル・CPU) を確かめる
 - パラメータ ID・PLUGIN_CODE (Trs4)・PLUGIN_MANUFACTURER_CODE (MIDy)・BUNDLE_ID (com.midy.transist4) は変えない。
   変えると保存済みの Live セットで設定が読めなくなる。Mac 版と Windows 版も同じ ID なので、セットを持ち回せる
-- 機能は ST4b 準拠。ST4b に無いもの (検出速度のつまみ、オートゲインのスイッチ) は付けていない。足すときはユーザーに確認する
+- 機能はこの構成で確定。検出速度のつまみやオートゲインのスイッチは意図して付けていない。足すときはユーザーに確認する
 - コミットの身元は `git config user.name` = midy4234-hub、`user.email` = 331112920+midy4234-hub@users.noreply.github.com。
   本名やホスト名由来のアドレス、個人の Gmail をコミットに入れない。コミット前に `git config --show-origin --get-regexp "^user\."` で確認する
 
@@ -54,7 +54,7 @@
 
 ## UI (Source/PluginEditor.cpp)
 
-- ChordRes と同じ Ableton 純正寄りの見た目 (ST4b そっくりの初版は「そのまますぎる」と却下された)
+- ChordRes と同じ Ableton 純正寄りの見た目 (別の見た目で作った初版は却下された)
 - 横帯型: 1 バンド = 1 本の横帯 (名前 | 波形 | Transient | Makeup | M/S/B)。上から HIGH → LOW に積む
 - クロスオーバーは帯の境目に数字で表示し、数字そのものを上下ドラッグ (約 80 px / オクターブ、ダブルクリックで初期値)。つまみにはしない (ユーザー指定)
 - 最下段に MASTER (Slope・Dry/Wet・Output・Delta/Bypass・IN/OUT 横メーター)

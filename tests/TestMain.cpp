@@ -322,8 +322,8 @@ namespace
     const Preset presets[] = {
         { "punch", { 18, 18, 18, 18 }, { 0, 0, 0, 0 } },
         { "soft",  { -18, -18, -18, -18 }, { 0, 0, 0, 0 } },
-        // ST4b のスクショの設定 (low, low-mid, mid, high)
-        { "st4bshot", { -34.0f, 45.0f, 43.4f, -6.3f }, { 0, 0, 0, 2.4f } },
+        // 効果がはっきり出る設定 (low, low-mid, mid, high)
+        { "showcase", { -34.0f, 45.0f, 43.4f, -6.3f }, { 0, 0, 0, 2.4f } },
     };
 
     void applyPreset (Transist4AudioProcessor& p, const Preset& pr)
@@ -494,7 +494,7 @@ int main (int argc, char* argv[])
         return renderCustom (argc, argv);
     if (argc >= 2 && juce::String (argv[1]) == "robust")
     {
-        // 耐久テスト (PluginLab/juce/common/LabRobust.h)。ST4b のスクショと同じ、効果がはっきり出る設定で
+        // 耐久テスト (PluginLab/juce/common/LabRobust.h)。効果がはっきり出る設定で
         lab::RobustConfig cfg;
         cfg.setup = [] (juce::AudioProcessor& p)
         {
