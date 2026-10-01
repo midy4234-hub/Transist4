@@ -30,4 +30,10 @@ jobs:
       - name: Build
         run: cmake --build build-test --config Release --target Transist4Test --parallel
       - name: Robust
-        run: ./build-test/Transist4Test_artefacts/Release/Transist4Test.exe robust
+        shell: cmd
+        run: |
+          build-test\Transist4Test_artefacts\Release\Transist4Test.exe robust > robust.txt 2>&1
+          set rc=%ERRORLEVEL%
+          type robust.txt
+          echo exit code %rc%
+          exit /b %rc%
