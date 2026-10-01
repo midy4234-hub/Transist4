@@ -1,5 +1,9 @@
 # Transist4 — 4 バンドのトランジェントシェイパー (VST3)
 
+デモ
+
+https://github.com/user-attachments/assets/d088048d-57ed-458f-8319-90a114f197ea
+
 コードは Claude Code (Anthropic の AI) が書き、MIDy が仕様を決めて Ableton Live で確認しました。
 無保証です。サポート・不具合対応・要望への対応はしません (Issue / Pull Request も受け付けません)。
 ライセンスは AGPLv3 (LICENSE)。JUCE (AGPLv3) と VST3 SDK (MIT) を使っています。Copyright (C) 2026 MIDy
